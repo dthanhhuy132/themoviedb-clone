@@ -1,0 +1,14 @@
+@use '../scss/' as *;
+
+.section__header {
+  @include flex(center, space-between);
+
+  margin-top: 4rem;
+
+  h2 {
+    display: inline-block;
+    color: #fff !important;
+    font-weight: 600;
+    margin: 0;
+  }
+}

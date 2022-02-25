@@ -25,30 +25,31 @@ const tmdbApi = {
 
   getTvList(type, params) {
     const url = `movie/${tvType[type]}`;
-    return axiosClient.get(url, params);
+    return axiosClient.get(url, { params });
   },
 
   getVideos(cate, id) {
-    const url = `${category[cate]}/${id}/vides`;
+    const url = `${category[cate]}/${id}/videos`;
     return axiosClient.get(url, { params: {} });
   },
 
-  sarch(cate, params) {
-    const url = `search/${category[cate]}`;
-    return axiosClient.get(url, params);
+  search(params) {
+    const url = `search/multi`;
+    return axiosClient.get(url, { params });
   },
 
   detail(cate, id, params) {
-    const url = `${category[cate]}/${id}/id`;
-    return axiosClient.get(url, params);
+    const url = `${category[cate]}/${id}`;
+    return axiosClient.get(url, { params: {} });
   },
 
   credits(cate, id) {
     const url = `${category[cate]}/${id}/credits`;
     return axiosClient.get(url, { params: {} });
   },
+
   similar(cate, id, params) {
-    const url = `${category[cate]}/${id}/silimar`;
+    const url = `${category[cate]}/${id}/similar`;
     return axiosClient.get(url, { params: {} });
   },
 };

@@ -1,6 +1,5 @@
 @use '../../scss/' as *;
 
-
 .logo {
   font-size: 2.5rem;
   font-weight: 600;
@@ -16,7 +15,6 @@
       margin-right: 0;
     }
   }
-
 }
 
 .header {
@@ -25,10 +23,10 @@
   left: 0;
 
   width: 100%;
-  height: $header-height ;
+  height: $header-height;
 
-  transition: height .3s ease, background-color .3s ease;  
-  
+  transition: height 0.3s ease, background-color 0.3s ease;
+
   z-index: 99;
 
   &.shrink {
@@ -39,15 +37,16 @@
   &__wrap {
     @include flex(center, space-between);
     height: 100%;
-    padding: 0 2rem; 
-    
+    padding: 0 2rem;
+
     @include mobile {
       justify-content: center;
     }
   }
 
   &__nav {
-    @include flex (center, unset);    
+    @include flex(center, unset);
+    margin-bottom: 0;
 
     li {
       margin: 5px 10px;
@@ -67,18 +66,18 @@
 
         background-color: $main-color;
 
-        transition: width .2s ease-in-out;
+        transition: width 0.2s ease-in-out;
       }
 
-      &.active::after, 
+      &.active::after,
       &:hover::after {
         width: 100%;
       }
     }
 
     @include mobile {
-      @include flex(center, space-between); 
-      
+      @include flex(center, space-between);
+
       position: fixed;
       bottom: 0;
       left: 0;
@@ -87,7 +86,6 @@
       background-color: $body-bg;
       padding: 0 2rem;
       box-shadow: $box-shadow;
-
     }
   }
 }

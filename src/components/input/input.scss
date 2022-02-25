@@ -1,0 +1,64 @@
+@use '../../scss/' as *;
+
+.search {
+  position: relative;
+  width: 30%;
+
+  margin: 0 2rem;
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 0.5rem;
+    transform: translateY(-50%);
+
+    padding: 10px;
+
+    cursor: pointer;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+
+  &__remove-value {
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    transform: translateY(-50%);
+
+    padding: 10px;
+
+    cursor: pointer;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+  input {
+    border: 0.5px solid rgba(255, 255, 255, 0.657);
+    background: none;
+
+    padding: 0.3rem 2.7rem 0.3rem 3rem;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 15px;
+    color: $text-color;
+    font-family: $font-family;
+
+    &::placeholder {
+      color: rgb(238, 236, 236);
+    }
+
+    &:focus {
+      border: 0.5px solid #fff;
+      background: rgba(204, 204, 204, 0.349);
+    }
+
+    transition: background 0.3s ease;
+  }
+}
+
+.shrink input {
+  background: black;
+}

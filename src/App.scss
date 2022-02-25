@@ -2,14 +2,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap');
 
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
-
 
 html {
   font-size: 100%;
@@ -27,7 +25,7 @@ body {
   font-family: $font-family;
   font-weight: 400;
   line-height: 1.5;
-  
+
   color: $text-color;
 
   background-color: $body-bg;
@@ -35,9 +33,6 @@ body {
   @include mobile {
     margin-bottom: 3rem;
   }
-
-  height: 5000px;
-
 }
 
 a {
@@ -45,13 +40,14 @@ a {
   color: unset;
 }
 
-@media (hover:hover) {
+@media (hover: hover) {
   a:hover {
-    color: $main-color
+    color: $main-color;
   }
 }
 
-button, input {
+button,
+input {
   outline: none;
 }
 
@@ -82,8 +78,17 @@ iframe {
 
 .section {
   padding: 0 2rem;
+
+  @include mobile {
+    padding: 0 1rem;
+  }
 }
 
 .section-header {
-  @include flex(center, space-between)
+  @include flex(center, space-between);
+
+  &__title {
+    display: inline-block !important;
+    color: red;
+  }
 }
