@@ -10,6 +10,7 @@ import Search from './pages/Search';
 import Home from './pages/Home';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Oop from './pages/Oop';
 
 function App(props) {
   return (
@@ -18,6 +19,7 @@ function App(props) {
         <Header {...props}></Header>
 
         <Switch>
+          <Route path="/opp/opp/oppage" component={Oop} exact={true}></Route>
           <Route path="/search/:keyword" component={Search} exact></Route>
           <Route path="/:category/search/:keyword" component={Catelog}></Route>
           <Route path="/:category/:id" component={Detail}></Route>

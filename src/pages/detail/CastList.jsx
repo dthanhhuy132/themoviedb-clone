@@ -9,7 +9,7 @@ function CastList({ category, id }) {
     (async () => {
       const response = await tmdbApi.credits(category, id);
 
-      setCastList(response.cast.slice(0, 5));
+      setCastList(response.cast.slice(0, 6));
     })();
   }, [category, id]);
 

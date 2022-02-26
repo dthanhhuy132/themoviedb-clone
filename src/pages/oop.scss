@@ -1,0 +1,18 @@
+@use '../scss/' as *;
+
+.oop-page {
+  position: relative;
+
+  img {
+    width: 100vw;
+    height: 100vh;
+    filter: opacity(0.5);
+  }
+
+  .btn {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

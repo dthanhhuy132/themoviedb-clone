@@ -8,9 +8,10 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import tmdbApi, { category as cate } from '../../api/tmdbApi';
 
+import { Skeleton } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import MovieCard from '../movie-card/MovieCard';
-import { Skeleton } from '@mui/material';
+import styled from 'styled-components';
 
 const MovieList = ({ type, id, category }) => {
   const [items, setItems] = useState(null);
@@ -70,5 +71,9 @@ MovieList.propTypes = {
   category: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
 };
+
+const SkeletonStyled = styled(Skeleton)`
+  background: #fff;
+`;
 
 export default MovieList;

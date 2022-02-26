@@ -25,16 +25,6 @@ function VideoList({ category, id }) {
 
   return (
     <div className="videoList">
-      <h2
-        style={{
-          color: '#fff',
-          fontSize: '1.5rem',
-          margin: '5rem 0rem 1rem 0rem',
-          borderBottom: '1px solid rgb(160 151 151)',
-        }}
-      >
-        Trailer & Teaser video
-      </h2>
       {videoList && !isMobileDevice ? (
         <SwiperStyled
           slidesPerView={1}

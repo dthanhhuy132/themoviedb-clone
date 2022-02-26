@@ -1,7 +1,7 @@
 import './detail.scss';
 
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
 import tmdbApi from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
@@ -13,15 +13,21 @@ import MovieList from '../../components/movie-list/MovieList';
 function Detail() {
   const { category, id } = useParams();
   const [item, setItem] = useState(null);
+  const history = useHistory();
 
   useEffect(() => {
-    async function getDetail() {
-      const params = {};
-      const response = await tmdbApi.detail(category, id, { params });
-      setItem(response);
-    }
+    (async () => {
+      try {
+        const params = {};
+        const response = await tmdbApi.detail(category, id, { params });
+        console.log('response', response);
+        setItem(response);
+      } catch (error) {
+        console.log('error', error.message);
+        history.push('/opp/opp/oppage');
+      }
+    })();
 
-    getDetail();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [category, id]);
 
@@ -70,6 +76,16 @@ function Detail() {
 
           <div className="conatiner">
             <div className="section mb-3">
+              <h2
+                style={{
+                  color: '#fff',
+                  fontSize: '1.5rem',
+                  margin: '5rem 0rem 1rem 0rem',
+                  borderBottom: '1px solid rgb(160 151 151)',
+                }}
+              >
+                Trailer & Teaser video
+              </h2>
               <VideoList id={id} category={category} />
             </div>
             <div className="section mb-3">

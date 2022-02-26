@@ -43,6 +43,7 @@ export const HeroSlide = () => {
         }}
         loop={true}
         autoplay={{ delay: 3000 }}
+        grabCursor={true}
       >
         {movieItems.map((item, i) => (
           <SwiperSlide key={i}>
